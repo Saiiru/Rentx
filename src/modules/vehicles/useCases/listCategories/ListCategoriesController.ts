@@ -1,13 +1,12 @@
-import {Request, Response} from "express"
-import { ListCategoriesUseCases } from "./ListCategoriesUseCases";
-
+import { Request, Response } from 'express'
+import { ListCategoriesUseCases } from './ListCategoriesUseCases'
 
 export class ListCategoriesController {
-constructor(private listCategoriesUseCase: ListCategoriesUseCases){}
+  constructor(private listCategoriesUseCase: ListCategoriesUseCases) {}
 
   handle(req: Response, res: Response): Response {
- const all = this.listCategoriesUseCase.execute()
+    const all = this.listCategoriesUseCase.execute()
 
-  return res.json(all);
+    return res.json(all)
   }
 }
