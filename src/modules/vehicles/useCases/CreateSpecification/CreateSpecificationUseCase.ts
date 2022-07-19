@@ -10,7 +10,7 @@ export class CreateSpecificationUseCase {
 
   execute({ name, description }: IRequest) {
     const specificationAlreadyExists = this.specificationsRepository.findByName(
-      name,
+      name
     );
 
     if (specificationAlreadyExists) {
@@ -19,7 +19,7 @@ export class CreateSpecificationUseCase {
 
     this.specificationsRepository.create({
       name,
-      description,
+      description
     });
   }
 }
